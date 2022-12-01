@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    android:background="#353535"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/contentviewpager"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:padding="20dp"
+        android:background="#FFC2C2"
+        app:layout_constraintEnd_toStartOf="@id/contentscrollview"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <ScrollView
+        android:id="@+id/contentscrollview"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:padding="20dp"
+        android:background="#C2CCFF"
+        app:layout_constraintStart_toEndOf="@id/contentviewpager"
+        app:layout_constraintEnd_toEndOf="parent">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:text="The quick brown fox jumps over the lazy dog!"
+            android:textSize="100sp"
+            android:textColor="@color/white"/>
+    </ScrollView>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SCROLL LITTLE PAGER WITH LEFT/RIGHT"
+        android:textColor="#FF0000"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/contentviewpager"
+        app:layout_constraintStart_toStartOf="@id/contentviewpager"
+        app:layout_constraintEnd_toEndOf="@id/contentviewpager"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SCROLL TEXT WITH UP/DOWN"
+        android:textColor="#FF0000"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/contentscrollview"
+        app:layout_constraintStart_toStartOf="@id/contentscrollview"
+        app:layout_constraintEnd_toEndOf="@id/contentscrollview" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
